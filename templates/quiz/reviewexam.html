@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title%}
+  Online English Test
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h2>Create Exam</h2>
+  {% if user.is_authenticated %}
+  <a href="{% url 'users:createexam' %}"><button type="button" class="btn btn-primary">Createexam</button></a>
+  <hr>
+  <table class="table table-striped">
+  <h2>Exam Data</h2>
+    <thead>
+      <tr>
+        <th>Exam</th>
+        <th>Category</th>
+        <th>Manage</th>
+      </tr>
+    </thead>
+    <tbody>{% for i in exam  %}
+      <tr> 
+        <td>{{i.title}}</td>
+        <td>{{i.category}}</td>
+        
+        <td><a href="{% url 'users:updateexam' i.id %}"><button type="button" class="btn btn-primary">Edit</button></a>
+        <a href="{% url 'users:deleteexam' i.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <h3><font color="red">กรุณา Login หรือ register</font></h3> <br>
+  <a href="{% url 'accounts:register' %}"><button type="button" class="btn btn-primary">Register</button></a>
+  <a href="{% url 'accounts:login' %}"><button type="button" class="btn btn-primary">Login</button></a>
+</div>
+{% endif %}
+
+{% endblock %}

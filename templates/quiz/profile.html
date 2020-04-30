@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title%}
+  Profile
+{% endblock %}
+
+{% block content %}
+<!-- link webs -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+              <div class="container">    
+                  <div class="row">
+                      <div class="panel panel-default">
+                      <div class="panel-heading"><b><h4 >User Profile</b></h4></div>
+                      <div class="panel-body">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">{% if user.profile.image %}
+                       <img alt="User Pic" src="{{ user.profile.image.url }}" id="profile-image1" class=" img-responsive"> {% endif %}
+                     
+                 
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                          <div class="container" >
+                            <h2><b>{{ user.username }}<b></h2>
+                          </div>
+                           <hr>
+                          <ul class="container details" >
+                            <h4><p><b>Profile</b></p></h4>
+                            <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span><b>Username:</b>  {{ user.username }}</p>
+                            <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span><b>First Name:</b>  {{ user.first_name }}</p>
+                            <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span><b>Last name:</b>  {{ user.last_name }}</p>
+                            <p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><b>Email:</b>  {{ user.email }}</p>
+                          </ul>
+                          <hr><br>
+                          <div class="col-sm-12 col-xs-12 tital " >
+                              <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-8">Update Profile </legend>
+                                    {{ u_form|crispy }}
+                                    {{ p_form|crispy }}
+                                </fieldset>
+                                <div class="form-group">
+                                    <button class="btn btn-success" type="submit">Update</button>
+                                </div>
+                            </form>
+                          </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+
+
+
+
+{% endblock %}

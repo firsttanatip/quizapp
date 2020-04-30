@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+  Knowledge
+{% endblock %}
+
+{% block content %}
+<!--link web -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!--css -->
+<link rel="stylesheet" href="{% static 'Css/kemail.css' %}">
+
+
+<!--web-->
+<div class="container">
+    <div class="well"> 
+        <div class="row">
+             <div class="col-md-12">
+                 
+                     
+                 <div class="pull-left col-md-4 col-xs-12 thumb-contenido"><img class="center-block img-responsive" src="{% static 'images/email.jpg' %}" /></div>
+                 <div class="">
+                     <h1  class="hidden-xs hidden-sm">การเขียน E-mail สมัครงานภาษาอังกฤษ</h1>
+                     
+                     <p class="text-justify">First impression (ความประทับใจแรก) เป็นเรื่องสำคัญของการสมัครงาน ซึ่งก่อนที่เราจะได้เข้าสัมภาษณ์กับทาง HR นั้น สิ่งที่เราจะทำให้พวกเขาประทับใจได้เป็นครั้งแรก คือ การเขียน E-mail สมัครงานภาษาอังกฤษนั่นเองค่ะ ก่อนอื่นเรามาดูสิ่งที่ควรมีใน E-mail สมัครงาน ว่ามีอะไรบ้าง
+<br><br>
+                 
+               1. ควรใส่หัวข้อเรื่อง (Subject) ว่าต้องการสมัครตำแหน่งใด พร้อมชื่อผู้สมัคร เช่น
+Resume for (ชื่อตำแหน่ง) - (ชื่อผู้สมัคร) เช่น Resume for HR assistant - Ruby Tedd
+CV for (ชื่อตำแหน่ง) - (ชื่อผู้สมัคร) เช่น CV for IT consultant - Ruby Tedd
+Job Application: (ชื่อตำแหน่ง) - (ชื่อผู้สมัคร) เช่น Job Application: Accountant - (Ruby Tedd)
+
+<br><br>
+                 
+               2. ใช้คำพูดเป็นทางการในการทักทาย
+เลี่ยงการใช้ Hello, Hi, Good morning และใช้ ‘Dear Mr./Ms./Mrs. Last name’ เพื่อความเป็นมืออาชีพ เช่น
+Dear Mrs. Ruby Tedd, Dear HR manager, Dear HR Recruitment Staff เป็นต้น
+
+<br><br>
+                 
+                 3. เขียนเนื้อหาเกี่ยวกับจุดประสงค์ของการส่ง E-mail ในการสมัครงานครั้งนี้อย่างย่อ ๆ ไม่ควรเขียนยาวจนเกินไป ควรมีข้อมูลที่จำเป็นและสำคัญ เช่น
+สนใจงานตำแหน่งนี้ และเห็นประกาศตำแหน่งงานจากที่ไหน
+เรามีคุณสมบัติอะไรบ้างตามที่บริษัท/หน่วยงานมองหา
+แจ้งว่าแนบไฟล์เอกสารมาด้วย
+ให้ข้อมูลการติดต่อหากทางบริษัทต้องการขอเอกสารเพิ่มเติม
+
+ <br><br>
+                4. แนบเอกสารที่เกี่ยวข้อง เช่น
+Resume/CV รูปแบบไฟล์ PDF/JPEG
+จดหมายแนะนำตัว (Cover Letter)
+จดหมายแนะนำจากอาจารย์มหาวิทยาลัยหรือผู้เชี่ยวชาญ (Recommendation letters)
+ถ้ามีผลทดสอบภาษาอังกฤษก็สามารถแนบได้ เช่น TOEIC. IELTS, TOEFL เป็นต้น
+ใบประกาศณียบัตรต่าง ๆ ที่เกี่ยวข้องกับตำแหน่งที่สมัคร (Certificates)      
+
+
+ <br><br>
+                 
+                <h4><b>ตัวอย่างการเขียน E-mail สมัครงานภาษาอังกฤษ </b></h4>
+          I am very interested in applying for the (ชื่อตําแหน่ง) position you advertised on (เว็บไซต์ที่ประกาศรับสมัครงาน) recently.My qualifications and experience match your specifications almost exactly. My resume/CV and related documents are attached. If I can provide you with any further information on my background and qualifications, please let me know.<br><br>
+          If you are interested, please contact me by phone number or email address.<br><br>
+
+          It would be a pleasure to hear back from you soon to discuss this exciting opportunity.<br><br>
+
+          Sincerely,<br><br>
+          (ชื่อผู้สมัคร)</p></div>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

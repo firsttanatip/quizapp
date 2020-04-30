@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+  Online English Test
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'Css/index.css' %}">
+
+
+  <h1 class="center">Welcome</h1><hr>
+  <br><br><br>
+	<div class="container">
+  <h2>Knowlegde</h2><hr><br><br>
+	<div class="row">
+	    <div class="col-md-4">
+    		<div class="card mb">
+              <br><center><img class="card-img-top" src="{% static 'images/email.jpg' %}" alt="Card image cap" width="200" height="200"></center>
+              <div class="card-body mb">
+                <center><h4 class="card-title"><b>การเขียน E-mail สมัครงานภาษาอังกฤษ</b></h4></center>
+                <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First impression (ความประทับใจแรก) เป็นเรื่องสำคัญของ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การสมัครงาน สิ่งที่เราจะทำให้พวกเขาประทับใจได้เป็นครั้ง<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;แรก คือ การเขียน E-mail</p>
+                <center><button type="button" class="btn btn-primary mb"><a href="{% url 'users:kemail' %}">Read More</a></button></center><br>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+    		<div class="card mb">
+              <br><center><img class="card-img-top" src="{% static 'images/featured.jpg' %}" alt="Card image cap"  width="200" height="200"></center>
+              <div class="card-body mb">
+                <center><h4 class="card-title"><b>7 วิธีช่วยให้เรียนภาษาอังกฤษที่บ้าน<br>ได้อย่างมีประสิทธิภาพ</b></h4></center>
+                <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ภาษาอังกฤษเป็นภาษาที่เราใช้กันทั่วโลก และในปัจจุบัน<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สามารถเรียนรู้ได้ง่าย ๆ ทุกที่ทุกเวลา &nbsp;&nbsp;</p>
+                <center><button type="button" class="btn btn-primary mb"><a href="{% url 'users:k7solution' %}">Read More</a></button></center><br>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+    		<div class="card mb">
+              <br><center><img class="card-img-top" src="{% static 'images/seeyou.jpg' %}" alt="Card image cap"  width="200" height="200"></center>
+              <div class="card-body mb">
+                 <center><h4 class="card-title"><b>‘ไปก่อนนะ’ พูดเป็นภาษาอังกฤษอย่างไร<br>ให้ฝรั่งเข้าใจ</b></h4> </center>
+                <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ในภาษาอังกฤษจะไม่มีคำว่า “ไปก่อนนะ” โดยตรงในภาษา<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;อังกฤษจึงขึ้นอยู่กับสถานการณ์นั้น ๆ เป็นหลัก</p>
+                <center><button type="button" class="btn btn-primary mb"><a href="{% url 'users:kbye' %}">Read More</a></button></center><br>
+              </div>
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+</div>
+
+<br><br>
+
+
+
+<!--exam -->
+<div class="container">
+  <h2>Choose the exam category</h2><hr>
+  
+  {% for i in cate %}
+ <div class="row">
+  <div class="col-lg-3">  
+  <div class="card-group">
+    <div class="card">
+   
+      <img class="card-img-top" src="{% static 'img/english.png' %}" alt="Card image cap" width="200" height="200">
+      <h5><b>By</b> Admin</h5>
+      <div class="card-body"> 
+      {% if user.is_authenticated %}<br>
+      
+     <a href="{% url 'exam' i.id %}"> <button type="button" class="btn btn-primary mb">{{i.title}}</button></a>
+      {% else %}
+      <h5><font color="red">Please Login or register</font></h5> <br>
+      <a href="{% url 'accounts:register' %}"><button type="button" class="btn btn-primary">Register</button></a>
+      <a href="{% url 'accounts:login' %}"><button type="button" class="btn btn-primary">Login</button></a>
+    
+    {% endif %}
+
+    
+    
+      </div>
+      
+    </div>
+  
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

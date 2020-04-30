@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title%}
+  CreateQuiz
+{% endblock %}
+
+{% block content %}
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffff;
+  resize: none;
+}
+</style>
+
+<section class="site-section">
+    <div class="container">
+
+			<div class="container">
+			<div class="row">
+					<div class="col-sm-12">
+						<center><h2><b>Create Quiz</b></h2></center>
+						<br><hr>
+						<form action="" method="POST">
+							{% csrf_token %}
+							{{form}}
+							
+							
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+	</div>
+</section>
+
+{% endblock %}

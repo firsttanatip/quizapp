@@ -1,0 +1,5 @@
+body { padding: 10px;}
+
+.question { padding: 10px; border-radius: 5px; background-color: #def; margin-bottom: 10px; }
+
+.question div { margin: 5px; }

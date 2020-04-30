@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+  Online English Test
+{% endblock %}
+
+{% block content %}
+
+<!--knowlegde -->
+<div class="container">
+  <h2>Choose the exam category</h2><hr>
+  
+  {% for i in cate %}
+ <div class="row">
+  <div class="col-lg-3">  
+  <div class="card-group">
+    <div class="card">
+   
+      <img class="card-img-top" src="{% static 'img/english.png' %}" alt="Card image cap" width="200" height="200">
+      <h5><b>By</b> Admin</h5>
+      <div class="card-body"> 
+      {% if user.is_authenticated %}<br>
+      
+     <a href="{% url 'exam' i.id %}"> <button type="button" class="btn btn-primary mb">{{i.title}}</button></a>
+      {% else %}
+      <h5><font color="red">Please Login or register</font></h5> <br>
+      <a href="{% url 'accounts:register' %}"><button type="button" class="btn btn-primary">Register</button></a>
+      <a href="{% url 'accounts:login' %}"><button type="button" class="btn btn-primary">Login</button></a>
+    
+    {% endif %}
+
+    
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  {% endfor %}
+{% endblock %}
